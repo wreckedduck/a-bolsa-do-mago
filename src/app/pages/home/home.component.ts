@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
+import { SvgIconComponent } from '../../components/svg-icon/svg-icon.component'
+import { HeaderComponent } from "../../components/header/header.component";
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  standalone: true,
+  imports: [SvgIconComponent, HeaderComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+  svgUrl = 'assets/icons/email/filled.svg'
 }

@@ -7,8 +7,19 @@ export const routes: Routes = [
       import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
-    path: 'about',
+    path: 'produtos',
     loadComponent: () =>
-      import('./pages/about/about.component').then((m) => m.AboutComponent),
+      import('./pages/produtos/produtos.component').then((m) => m.ProdutosComponent),
+  }
+  ,
+  {
+    path: 'contato',
+    loadComponent: () =>
+      import('./pages/contato/contato.component').then((m) => m.ContatoComponent),
   },
+  {
+    path: 'carrinho',
+    loadComponent: () =>
+      import('./pages/carrinho/carrinho.component').then((m) => m.CarrinhoComponent),
+  }
 ]

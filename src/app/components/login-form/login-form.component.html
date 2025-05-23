@@ -1,0 +1,44 @@
+<form class="login-form" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+    <h3 class="login-title">Login</h3>
+    
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input 
+            type="email" 
+            id="email" 
+            formControlName="email"
+            placeholder="seu@email.com"
+            [class.invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+        >
+        @if(loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+            <div class="error-message">
+                Por favor, insira um e-mail válido
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="password">Senha</label>
+        <input 
+            type="password" 
+            id="password" 
+            formControlName="password"
+            placeholder="••••••••"
+            [class.invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+        >
+        @if(loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+            <div class="error-message">
+                A senha é obrigatória
+            </div>
+        }
+    </div>
+
+    <button type="submit" class="login-button" [disabled]="loginForm.invalid">
+        Entrar
+    </button>
+
+    <div class="login-links">
+        <a href="forgot" class="forgot-password">Esqueci minha senha</a>
+        <a (click)="formMode.emit('sign-in')" class="register">Criar conta</a>
+    </div>
+</form>

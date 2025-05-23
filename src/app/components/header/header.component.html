@@ -1,0 +1,62 @@
+<header class="header">
+    <div class="header-container">
+        <a routerLink="/" class="logo">
+            <img src="assets/png/logo-white.png" alt="">
+        </a>
+
+        <nav class="nav" [class.user-actions-open]="menuOpen">
+            <ul class="nav-list">
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a 
+                        routerLink="/" 
+                        class="nav-link"
+                    >
+                        <svg-icon src="assets/icons/home/filled.svg" color="var(--secondary-color)"></svg-icon> INÍCIO
+                    </a>
+                </li>
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a 
+                        routerLink="produtos" 
+                        class="nav-link"
+                    >
+                        <svg-icon src="assets/icons/shop/filled.svg" color="var(--secondary-color)"></svg-icon> PRODUTOS
+                    </a>
+                </li>
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a 
+                        routerLink="contato" 
+                        class="nav-link"
+                    >
+                        <svg-icon src="assets/icons/email/filled.svg" color="var(--secondary-color)"></svg-icon> CONTATOS
+                    </a>
+                </li>
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a 
+                        routerLink="carrinho" 
+                        class="nav-link"
+                    >
+                        <svg-icon src="assets/icons/shopping/filled.svg" color="var(--secondary-color)"></svg-icon> CARRINHO
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="form" [class.active]="menuOpen">
+            @if(formMode === 'login') {
+                <app-login-form [menuOpen]="menuOpen" (formMode)="formMode = $event"/>
+            }
+            @if(formMode === 'sign-in') {
+                <app-sign-in-form [menuOpen]="menuOpen" (formMode)="formMode = $event"/>
+            }
+        </div>
+
+        <div class="user-actions">
+            <button class="hamburguer-btn" (click)="toggleMenu()">
+                <svg-icon 
+                    src="assets/icons/{{menuOpen ? 'close' : 'hamburguer'}}/outlined.svg" 
+                    color="var(--secondary-color)"
+                ></svg-icon>
+            </button>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+
+:root {
+  --font-primary: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Anton', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  
+  --text-base-size: 1rem;
+  --text-scale-ratio: 1.2;
+}
+
+:root {
+  --text-xs: calc(var(--text-base-size) / var(--text-scale-ratio));
+  --text-sm: calc(var(--text-base-size));
+  --text-md: calc(var(--text-base-size) * var(--text-scale-ratio));
+  --text-lg: calc(var(--text-base-size) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xl: calc(var(--text-base-size) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xxl: calc(var(--text-base-size) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xxxl: calc(var(--text-base-size) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+}
+
+// Aplicação global
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-base-size);
+  line-height: 1.6;
+  color: #333; // Cor padrão do texto
+  font-weight: 400;
+}
+
+// Estilos para títulos
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: inherit;
+}
+
+// Tamanhos específicos para títulos
+h1, .h1 { font-size: var(--text-xxxl); }
+h2, .h2 { font-size: var(--text-xxl); }
+h3, .h3 { font-size: var(--text-xl); }
+h4, .h4 { font-size: var(--text-lg); }
+h5, .h5 { font-size: var(--text-md); }
+h6, .h6 { font-size: var(--text-sm); }
+
+// Classes utilitárias para fontes
+.font-primary {
+  font-family: var(--font-primary);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+// Peso das fontes
+.text-light   { font-weight: 300; }
+.text-regular { font-weight: 400; }
+.text-medium  { font-weight: 500; }
+.text-bold    { font-weight: 700; }
+
+// Estilos de texto
+.text-uppercase  { text-transform: uppercase; }
+.text-capitalize { text-transform: capitalize; }
+.text-lowercase  { text-transform: lowercase; }
+.text-underline  { text-decoration: underline; }
