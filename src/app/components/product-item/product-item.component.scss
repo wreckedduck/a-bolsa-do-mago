@@ -59,7 +59,7 @@ span {
   border-radius: 12px;
   font-size: 12px;
   width: 50%;
-  height: 30px;
+  height: 29px;
   cursor: pointer;
   transition: all 0.4s ease;
   
@@ -103,12 +103,14 @@ span {
 
   &-hover.wishlist {
     background: var(--wishlist);
+    border: 1px solid var(--wishlist);
     justify-content: flex-start;
     padding-left: 0.9rem;
   }
 
   &-hover.cart {
     background: var(--green);
+    border: 1px solid var(--green);
     justify-content: flex-start;
     padding-left: 0.9rem;
   }
