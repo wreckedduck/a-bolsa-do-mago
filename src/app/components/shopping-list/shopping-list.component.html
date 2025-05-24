@@ -1,0 +1,6 @@
+<h2>{{ title }}</h2>
+<div class="product-grid">
+    @for(product of items; track $index) {
+        <app-product-item [product]="product"></app-product-item>
+    }
+</div>

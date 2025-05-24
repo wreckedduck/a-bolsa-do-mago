@@ -1,0 +1,153 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 300px;
+}
+img {
+    width: 100%;
+    margin-bottom: 15px;
+}
+span {
+    font-weight: 500;
+}
+
+.price {
+    font-size: 2rem;
+    margin-top: -0.5rem;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.25rem;
+
+    .discount {
+        text-decoration-line: line-through;
+        text-decoration-skip-ink: none;
+        text-decoration-thickness: 1px;
+        text-decoration-color: #999;
+        text-decoration-offset: 4px;
+        color: #999;
+        font-weight: 400;
+    }
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .stars {
+    display: flex;
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin-bottom: 0;
+    }
+  
+    .opacity {
+      opacity: 0.5;
+    }
+  }
+}
+
+.slide-button {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  width: 50%;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  
+  &-text, &-hover {
+    display: block;
+    gap: 0.5rem;
+    transition: transform 0.4s ease;
+
+    img {
+      width: 12px;
+      height: 12px;
+      margin-bottom: 0;
+    }
+  }
+  
+  &-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green);
+    color: white;
+    clip-path: polygon(5% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transform: translateX(100%);
+  }
+  
+  &:hover {
+    border-color: var(--green);
+    
+    .slide-button-text {
+      transform: translateX(-15%);
+      margin-left: 0.7rem;
+    }
+    
+    .slide-button-hover {
+      transform: translateX(83%);
+    }
+  }
+
+  &-hover.wishlist {
+    background: var(--wishlist);
+    justify-content: flex-start;
+    padding-left: 0.55rem;
+  }
+
+  // quando ativo
+  &.in-wishlist {
+    .slide-button-hover.wishlist {
+      justify-content: center;
+      clip-path: none;
+      transform: translateX(0);
+    }
+
+    &:hover {
+      .slide-button-hover.wishlist {
+        transform: translateX(0);
+      }
+
+      .slide-button-text {
+        transform: none;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &.in-cart {
+    .slide-button-hover.cart {
+      clip-path: none;
+      transform: translateX(0);
+    }
+
+    &:hover {
+      .slide-button-hover.cart {
+        transform: translateX(0);
+      }
+
+      .slide-button-text {
+        transform: none;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+}

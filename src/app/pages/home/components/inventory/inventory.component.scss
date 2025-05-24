@@ -1,0 +1,10 @@
+.collapse-container {
+    display: flex;
+    gap: 1rem 3rem;
+    flex-wrap: wrap;
+
+    span {
+        font-weight: 500;
+        cursor: pointer;
+    }
+}

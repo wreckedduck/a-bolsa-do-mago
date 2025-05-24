@@ -10,8 +10,7 @@ export const routes: Routes = [
     path: 'produtos',
     loadComponent: () =>
       import('./pages/produtos/produtos.component').then((m) => m.ProdutosComponent),
-  }
-  ,
+  },
   {
     path: 'contato',
     loadComponent: () =>
@@ -21,5 +20,15 @@ export const routes: Routes = [
     path: 'carrinho',
     loadComponent: () =>
       import('./pages/carrinho/carrinho.component').then((m) => m.CarrinhoComponent),
+  },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./components/login-form/login-form.component').then((m) => m.LoginFormComponent),
+  },
+  {
+    path: 'signin',
+    loadComponent: () =>
+      import('./components/sign-in-form/sign-in-form.component').then((m) => m.SignInFormComponent),
   }
 ]

@@ -1,0 +1,9 @@
+<div class="collapse-container">
+  <div class="collapse-header" (click)="toggle()">
+    <h2><span class="icon-arrow" [class.open]="isOpen"></span> {{ title }}</h2>
+  </div>
+  
+  <div class="collapse-content" [class.open]="isOpen">
+    <ng-content></ng-content>
+  </div>
+</div>

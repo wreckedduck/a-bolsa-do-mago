@@ -2,9 +2,8 @@ import { Component, HostListener } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
 import { SvgIconComponent } from "../svg-icon/svg-icon.component"
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms'
 import { LoginFormComponent } from "../login-form/login-form.component"
-import { SignInFormComponent } from "../sigin-form/sign-in-form.component";
+import { SignInFormComponent } from "../sign-in-form/sign-in-form.component"
 
 @Component({
   selector: 'app-header',

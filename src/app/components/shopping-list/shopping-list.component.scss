@@ -1,0 +1,26 @@
+h2 {
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 30px;
+  row-gap: 80px;
+
+  @media (max-width: 1500px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // Ajusta para 1 coluna em mobile
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+}

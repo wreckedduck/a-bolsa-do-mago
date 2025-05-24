@@ -1,0 +1,50 @@
+.collapse-container {
+  border-bottom: 1px solid var(--primary-color);
+  margin-top: 1rem;
+  
+  .collapse-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+    
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--primary-color);
+  
+      .icon-arrow {
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        background-color: currentColor;
+        -webkit-mask: url('../../../../public/assets/icons/arrow/outlined.svg') no-repeat center;
+        mask: url('../../../../public/assets/icons/arrow/outlined.svg') no-repeat center;
+        transition: transform 0.2s ease-out;
+
+        &.open {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+  
+  .collapse-content {
+    overflow: hidden;
+    transition: 
+    max-height 0.5s ease-out,
+    padding-bottom 0.3s ease-out;
+    max-height: 0;
+    padding-bottom: 0;
+    
+    &.open {
+      max-height: 150px; // Valor maior que a altura máxima esperada
+      padding-bottom: 1rem;
+    }
+  }
+}

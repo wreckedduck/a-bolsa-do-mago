@@ -1,0 +1,35 @@
+<img [src]="product?.img?.url" alt="Foto do produto">
+<span>{{ product?.title }}</span>
+
+<div class="info">
+    <div class="stars">
+        <img [class.opacity]="(product?.stars || 0) < 1" src="assets/png/star-filled.png">
+        <img [class.opacity]="(product?.stars || 0) < 2" src="assets/png/star-filled.png">
+        <img [class.opacity]="(product?.stars || 0) < 3" src="assets/png/star-filled.png">
+        <img [class.opacity]="(product?.stars || 0) < 4" src="assets/png/star-filled.png">
+        <img [class.opacity]="(product?.stars || 0) < 5" src="assets/png/star-filled.png">
+    </div>
+    <span>{{ product?.soldCount }} Vendidos</span>
+</div>
+<div class="price">
+    @if(product?.discount) {
+        <span>{{ product?.discount | currency:'BRL':'symbol':'1.2-2' }}</span>
+    }
+    <span [class.discount]="product?.discount">
+        {{ product?.price | currency:'BRL':'symbol':'1.2-2' }}
+    </span>
+</div>
+<div class="button-container">
+  <button [class.in-cart]="inCart" class="slide-button" (click)="inCart = !inCart">
+    <span class="slide-button-text">Adicionar ao carrinho</span>
+    <span class="slide-button-hover cart"><img src="assets/png/shopping.png"> Adicionado ao carrinho</span>
+  </button>
+
+  <button [class.in-wishlist]="inWishlist" class="slide-button wishlist-button" (click)="inWishlist = !inWishlist">
+    <span class="slide-button-text">Lista de Desejos</span>
+    <span class="slide-button-hover wishlist">
+        <img src="assets/png/heart.png" alt="heart" />
+        Adicionado à lista
+    </span>
+    </button>
+</div>

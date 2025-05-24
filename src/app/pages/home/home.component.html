@@ -1,1 +1,8 @@
-teste
+<main class="main-container">
+    <div class="hero-container">
+        <app-inventory />
+        <img src="assets/png/hero.png" alt="">
+    </div>
+    <app-shopping-list title="DESTAQUES" [items]="highlightedProducts"></app-shopping-list>
+    <app-shopping-list title="MAIS COMPRADOS" [items]="shoppingListItems"></app-shopping-list>
+</main>
