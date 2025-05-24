@@ -108,6 +108,12 @@ span {
     padding-left: 0.9rem;
   }
 
+  &-hover.cart {
+    background: var(--green);
+    justify-content: flex-start;
+    padding-left: 0.9rem;
+  }
+
   // quando ativo
   &.in-wishlist {
     .slide-button-hover.wishlist {
