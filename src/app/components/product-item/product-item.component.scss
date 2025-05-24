@@ -52,6 +52,7 @@ span {
 .slide-button {
   position: relative;
   overflow: hidden;
+  //border: 1px solid transparent;
   background-color: var(--primary-color);
   color: var(--secondary-color);
   padding: 0 8px;
@@ -90,11 +91,9 @@ span {
   }
   
   &:hover {
-    border-color: var(--green);
-    
     .slide-button-text {
       transform: translateX(-15%);
-      margin-left: 0.7rem;
+      margin-left: 0.9rem;
     }
     
     .slide-button-hover {
